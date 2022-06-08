@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact manager</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beya1/distbootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header>
+        <h1> manage your <span class="danger">contacts</span> now ! </h1><br>
+        <div id="menu">
+            <span class="material-symbols-sharp">
+            menu
+            </span>
+            <h3>menu</h3>
+        </div>
+    </header>
+    <div class="container">
+        <aside class="top">
+            <div class="sidebar" id="side">
+                <a href="#" id="hide_all">
+                    <span class="material-symbols-sharp">
+                        contact_mail
+                        </span>
+                    <h3>contacts (card view)</h3>
+                </a>
+                <a href="#" id="add_contact">
+                    <span class="material-symbols-sharp">
+                        person_add
+                        </span>
+                    <h3> add contact </h3>
+                </a>
+                <a href="#" id="delete_all">
+                    <span class="material-symbols-sharp">
+                        folder_delete
+                        </span>
+                    <h3> delete all </h3>
+                </a>
+                <a href="#" id="show_table">
+                    <span class="material-symbols-sharp">
+                        table
+                        </span>
+                    <h3>show table</h3>
+                </a>
+                <a href="#" id="show_search_button">
+                    <span class="material-symbols-sharp">
+                        search 
+                        </span>
+                    <h3>search contacts</h3>
+
+                </a>
+                <div class="none" id="search_block">
+                    <input type="text" id="search" placeholder="enter your contact name" class="search"><br><br>
+                    <button type="button" id="search_btn" class="search-btn" onclick="search()">search</button>
+                </div>
+            </div>
+        </aside>
+        <main>
+            <div class="main-section" id="card">
+                <div class="cards">
+
+
+                </div>
+                <div class="left-side">
+                    <div class="top_part">
+                    </div>
+                    <div class="second_part">
+                        <h3>info</h3><br>
+                        <h4 id="date" class="text-muted">last sign-in : </h4><br>
+                        <h4 id="contact_number" class="text-muted">number of contacts : </h4><br>
+                    </div>
+                </div>
+            </div>
+            <div class="add_contact_module none" id="form_module">
+                <div class="top-part">
+                    <h2>Add contact</h2>
+                    <span class="material-symbols-sharp" id="close-btn">
+                    close
+                    </span>
+                </div>
+                <div class="inputs">
+                    <div class="label-input" id="name_div">
+                        <label for="name"><h3>name</h3><span class="material-symbols-sharp">
+                            person
+                            </span>
+                            </label>
+                        <input type="text" name="name" id="name">
+                    </div>
+                    <div class="label-input" id="job_div">
+                        <label for="job"><h3>job title</h3> <span class="material-symbols-sharp">
+                            work
+                            </span></label>
+                        <input type="text" name="job" id="job">
+                    </div>
+                    <div class="label-input" id="number_div">
+                        <label for="number"><h3>phone number</h3><span class="material-symbols-sharp">
+                            contact_phone
+                            </span></label>
+                        <input type="text" name="number" id="number">
+                    </div>
+                    <div class="buttons">
+                        <div>
+                            <button class="btn close-btn" id="delete_input">
+                            <h3>delete</h3>
+                            <span class="material-symbols-sharp">
+                                delete
+                                </span>
+                            </button>
+                        </div>
+                        <div>
+                            <button class="btn save-btn" id="save"><h3>save</h3><span class="material-symbols-sharp" >
+                            save
+                            </span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="add_contact_module none" id="edit_module">
+                <div class="top-part">
+                    <h2>update your contact information</h2>
+                    <span class="material-symbols-sharp" id="edit-close-btn">
+                    close
+                    </span>
+                </div>
+                <div class="inputs">
+                    <div class="label-input" id="name_div">
+                        <label for="name"><h3>name</h3><span class="material-symbols-sharp">
+                            person
+                            </span>
+                            </label>
+                        <input type="text" name="name" id="name_edit">
+                    </div>
+                    <div class="label-input" id="job_div">
+                        <label for="job"><h3>job title</h3> <span class="material-symbols-sharp">
+                            work
+                            </span></label>
+                        <input type="text" name="job" id="job_edit">
+                    </div>
+                    <div class="label-input" id="number_div">
+                        <label for="number"><h3>phone number</h3><span class="material-symbols-sharp">
+                            contact_phone
+                            </span></label>
+                        <input type="text" name="number" id="number_edit">
+                    </div>
+                    <div class="buttons">
+                        <div>
+                            <button class="btn close-btn" id="edit_delete_input">
+                            <h3>delete</h3>
+                            <span class="material-symbols-sharp">
+                                delete
+                                </span>
+                            </button>
+                        </div>
+                        <div>
+                            <button class="btn edit-btn" id="edit"><h3>update</h3><span class="material-symbols-sharp" >
+                            update
+                            </span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <table class="none">
+                <thead>
+                    <th>name</th>
+                    <th>job title</th>
+                    <th>number</th>
+                    <th><span class="material-symbols-sharp" id="hide_table">
+                            close
+                            </span></th>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+            <div class="existe none">
+                <h1> ouuuupsss ! this phone number exist !</h1>
+                <span class="material-symbols-sharp danger" id="hide_existe">
+                    close
+                    </span>
+            </div>
+            <div class="searched_contact">
+                <div>
+                    <h1 class="success yesno"></h1>
+                    <div class="info">
+
+                    </div>
+                </div>
+                <div>
+                    <span class="material-symbols-sharp danger" id="hide_searched">
+                    close
+                    </span>
+                </div>
+            </div>
+        </main>
+
+    </div>
+    <footer>
+        <h3 class="text-muted">made by : </h3>
+        <img src="me.jpg" alt="" class="profile-photo">
+        <h3 class="text-muted">mohamed amin hkimi <br>
+            <a href="https://www.facebook.com/mohamedamin.hkimi.5" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-github"></a>
+            <a href="https://www.instagram.com/hkimi_amin/" class="fa fa-instagram"></a>
+        </h3>
+    </footer>
+    <script src="./script/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+
+</html>
+
+</html>
