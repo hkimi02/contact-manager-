@@ -44,10 +44,15 @@ document.getElementById("hide_searched").addEventListener('click', () => {
     document.querySelector(".searched_contact").style.display = "none";
     document.querySelector("#card").classList.remove("opac");
 })
-let menu = document.getElementById("menu");
-menu.addEventListener('click', () => {
-        document.querySelector("aside").classList.toggle("none");
-        document.querySelector(".cards").classList.toggle("width-cards");
+let menu_responsive = document.querySelector("#menu");
+console.log(menu_responsive);
+menu_responsive.addEventListener('click', () => {
+    console.log(menu_responsive);
+    document.querySelector("aside").classList.toggle("none");
+    document.querySelector(".cards").classList.toggle("width-cards");
+})
+document.querySelector("#hide_existe").addEventListener('click', () => {
+        document.querySelector(".existe").style.display = "none";
     })
     /////////////////////////////////////////////////////////*end of styleeee */////////////////////////////////////////
 function unique(pnumber) {
@@ -61,9 +66,7 @@ function unique(pnumber) {
     }
     return true;
 }
-document.querySelector("#hide_existe").addEventListener('click', () => {
-    document.querySelector(".existe").style.display = "none";
-})
+
 
 function search() {
     contacts = JSON.parse(localStorage.getItem('contacts'));
@@ -315,7 +318,6 @@ function delete_all() {
 }
 
 function get_data_open() {
-    console.log(contacts);
     for (i = 0; i < contacts.length; i++) {
         affiche_old(contacts[i]);
     }
